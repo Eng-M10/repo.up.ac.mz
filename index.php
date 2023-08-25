@@ -1,10 +1,26 @@
+<?php
+
+if (PHP_SESSION_ACTIVE != session_status()) session_start();
+
+if (isset($_SESSION['normal'])  || isset($_SESSION['admin'])) {
+        echo'<Script>alert(login bem sucedido)</Script>';
+}
+else {
+    header("Location: index.php");
+    exit;
+}
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Repositorio - Faculdade de Engenharias e Tecnlogias</title>
-    <!-- Adicione o link para o Bootstrap CSS -->
+   
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 </head>
 <body class="bg-dark">
@@ -17,10 +33,13 @@
         </div>
         <div class="d-flex align-items-center">
             <input type="text" name="search" id="search" placeholder="Pesquisar" class="form-control me-2">
-            <a href="./pages/login.php" class="text-white me-2">Login</a>
-            <a href="./pages/signup.php" class="text-white">Cadastrar</a>
+            <a href="login.php" class="text-white me-2">Login</a>
+            <a href="signup.php" class="text-white">Cadastrar</a>
         </div>
     </div>
+
+
+ 
 
     <!-- Adicione o link para o Bootstrap JS (opcional) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
