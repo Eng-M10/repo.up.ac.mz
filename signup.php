@@ -80,7 +80,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 </head>
 <body>
     <div class="container">
-        <img src="../img/up_logo.png" alt="" class="w-20">
+        <img src="./img/up_logo.png" alt="" class="w-20">
         <h1>Cadastrar</h1>
         <div class="conteudo">
             <form method="post">
