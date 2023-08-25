@@ -1,0 +1,23 @@
+
+img{
+    width: 150px;
+    height: 150px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+h1{
+    
+    text-align: center;
+}
+
+.footer{
+   
+    background-color: #000000;
+    width: 100vw;
+    height: 70px;
+    
+    text-align: center;
+    color: #ffffff;
+    text-decoration: none;
+}
+
