@@ -15,9 +15,9 @@
 <body class="bg-dark">
     <div class="bg-dark.bg-gradient text-white p-4 d-flex justify-content-between align-items-center">
         <div class="d-flex align-items-center">
-            <img src="./img/up_logo.png" alt="logo da up-maputo" class="w-10 h-50 me-2">
+            <img src="./img/up_logo.png" alt="logo da up-maputo" class="w-10 h-10 me-2">
             <span class="border border-white mx-10"></span>
-            <img src="./img/logo-fet.jpeg" alt="logotipo da fet" class="w-10 h-50 ms-2">
+            <img src="./img/logo-fet.jpeg" alt="logotipo da fet" class="w-20 h-20 ms-2">
             <h1 class="h5 ms-2">Repositorio da Faculdade de Engenharias e Tecnologias</h1>
         </div>
         <div class="d-flex align-items-center">

@@ -6,12 +6,30 @@
       session_start();
     
 
-    //if(isset($_COOKIE["cookieadmin"]))
-   // $_SESSION['admin']['user'] = $_COOKIE['user'];
-    
-    //elseif(isset($_COOKIE["cookname"]) && isset($_COOKIE["cookpass"]))
-   // $_SESSION['normal']['user'] = $_COOKIE['user'];
-    
+    if(isset($_COOKIE['remember'])){
+        $id = $_COOKIE['remember'];
+        $sql = "SELECT id,nome,user,senha,nivel_acesso FROM usuario WHERE id = '$id'";
+        $result = $conn->query($sql)->fetch_assoc();
+
+        if($result["nivel_acesso"] == "admin"){
+            $_SESSION['user'] = $result["user"];
+            $_SESSION['id'] = $result["id"];
+            $_SESSION['nome'] = $result["nome"];
+            $_SESSION['admin'] = $result["nivel_acesso"];
+            $_SESSION['status']['logado'] = true;
+            header("Location: admin.php");
+            exit();
+        } else {
+            $_SESSION['user'] = $result["user"];
+            $_SESSION['nome'] = $result["nome"];
+            $_SESSION['nivel_acesso'] = $result["nivel_acesso"];
+            $_SESSION['status']['logado'] = false;
+            header("Location: profile.php");
+            exit();
+        }
+
+
+    }
 
 
     if($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -33,14 +51,10 @@
                    $_SESSION['nome'] = $result["nome"];
                    $_SESSION['admin'] = $result["nivel_acesso"];
                    $_SESSION['status']['logado'] = true;
-            //if(isset($_POST["remember"])){
-                   //     setcookie("user", "admin", time() + 3600* 30);
-                   //     setcookie("user", $result["user"], time() + 3600 * 30);
-                  //  }
-                   // echo "<pre>";
-                   // print_r($_SESSION);
-                    
-                    
+
+                    if( isset($_POST["remember"]) ){
+                        setcookie("remember", $result['id'], time() + 3600* 30);
+                       }
                     header("Location: admin.php");
                     exit();
                   
@@ -49,10 +63,10 @@
                     $_SESSION['nome'] = $result["nome"];
                     $_SESSION['nivel_acesso'] = $result["nivel_acesso"];
                     $_SESSION['status']['logado'] = false;
-                   /* if(isset($_POST["remember"])){
-                        setcookie("cookname", "user", time() + (86400 * 30));
-                        setcookie("cookpass", $result["user"], time() + (86400 * 30));
-                    }*/
+
+                    if( isset($_POST["remember"]) ){
+                        setcookie("remember", $result['id'], time() + 3600* 30);
+                       }
 
                     header("Location: profile.php");
                     exit();
