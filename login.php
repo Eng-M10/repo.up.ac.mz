@@ -32,6 +32,7 @@
                    $_SESSION['id'] = $result["id"];
                    $_SESSION['nome'] = $result["nome"];
                    $_SESSION['admin'] = $result["nivel_acesso"];
+                   $_SESSION['status']['logado'] = true;
             //if(isset($_POST["remember"])){
                    //     setcookie("user", "admin", time() + 3600* 30);
                    //     setcookie("user", $result["user"], time() + 3600 * 30);
@@ -47,6 +48,7 @@
                     $_SESSION['user'] = $result["user"];
                     $_SESSION['nome'] = $result["nome"];
                     $_SESSION['nivel_acesso'] = $result["nivel_acesso"];
+                    $_SESSION['status']['logado'] = false;
                    /* if(isset($_POST["remember"])){
                         setcookie("cookname", "user", time() + (86400 * 30));
                         setcookie("cookpass", $result["user"], time() + (86400 * 30));

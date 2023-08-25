@@ -5,7 +5,7 @@
     session_start();
 //
 $nome = $_SESSION['nome'];
-if(!isset($_SESSION['admin'])   or  $_SESSION['nivel_acesso'] != "admin") {
+if(!isset($_SESSION['admin'])   ||  $_SESSION['status']['logado'] != true) {
  
    header("Location: login.php");
    exit;
