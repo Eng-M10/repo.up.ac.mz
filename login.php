@@ -53,7 +53,7 @@
                    $_SESSION['status']['logado'] = true;
 
                     if( isset($_POST["remember"]) ){
-                        setcookie("remember", $result['id'], time() + 3600* 30);
+                        setcookie("remember", $result['id'], time() + 30);
                        }
                     header("Location: admin.php");
                     exit();
@@ -65,7 +65,7 @@
                     $_SESSION['status']['logado'] = false;
 
                     if( isset($_POST["remember"]) ){
-                        setcookie("remember", $result['id'], time() + 3600* 30);
+                        setcookie("remember", $result['id'], time() + 30);
                        }
 
                     header("Location: profile.php");

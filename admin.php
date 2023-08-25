@@ -49,6 +49,43 @@ if(!isset($_SESSION['admin'])   ||  $_SESSION['status']['logado'] != true) {
                 <a href="index.php">Voltar ao Dashboard</a>
             </div>
         </div>
+
+        <hr>
+
+        <div class="dataview">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Usuário</th>
+                        <th>Nome</th>
+                        <th>Email</th>
+                        <th>Nível de Acesso</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php   
+                        require_once "config.php";
+                        $sql = "SELECT id,nome,user,nivel_acesso FROM usuario";
+                        
+                        $result = $conn->query($sql)->fetch_array();
+                        echo '<pre>';
+                        print_r ($result);
+                        exit;
+
+                       // while($dados=mysqli_fetch_array($result) ){
+                               // echo "<tr>";
+                              //  echo "<td>" . $row['id'] . "</td>";
+                       // }
+
+                        
+
+                    ?>
+                </tbody>
+            </table>
+
+        </div>
     </div>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
