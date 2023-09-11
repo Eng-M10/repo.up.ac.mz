@@ -1,88 +1,16 @@
 <?php
    require_once "config.php";
+   require_once "./pages/Login.php";
 
-
-    if(PHP_SESSION_ACTIVE != session_status())
-      session_start();
-    
+    $login = new Login();
 
     if(isset($_COOKIE['remember'])){
-        $id = $_COOKIE['remember'];
-        $sql = "SELECT id,nome,user,senha,nivel_acesso FROM usuario WHERE id = '$id'";
-        $result = $conn->query($sql)->fetch_assoc();
-
-        if($result["nivel_acesso"] == "admin"){
-            $_SESSION['user'] = $result["user"];
-            $_SESSION['id'] = $result["id"];
-            $_SESSION['nome'] = $result["nome"];
-            $_SESSION['admin'] = $result["nivel_acesso"];
-            $_SESSION['status']['logado'] = true;
-            header("Location: admin.php");
-            exit();
-        } else {
-            $_SESSION['user'] = $result["user"];
-            $_SESSION['nome'] = $result["nome"];
-            $_SESSION['nivel_acesso'] = $result["nivel_acesso"];
-            $_SESSION['status']['logado'] = false;
-            header("Location: profile.php");
-            exit();
+            $login->remember_me($_COOKIE['remember']); 
         }
 
-
-    }
-
-
     if($_SERVER["REQUEST_METHOD"] == "POST"){
-        
-
-
-        $user = $_POST["user"];
-        $password = $_POST["password"];
-            $sql = "SELECT id,nome,user,senha,nivel_acesso FROM usuario WHERE user = '$user'";
-            $result = $conn->query($sql)->fetch_assoc();
-
-           
-           if(password_verify($password, $result["senha"])){
-                
-                
-               if($result["nivel_acesso"] == "admin"){
-                   $_SESSION['user'] = $result["user"];
-                   $_SESSION['id'] = $result["id"];
-                   $_SESSION['nome'] = $result["nome"];
-                   $_SESSION['admin'] = $result["nivel_acesso"];
-                   $_SESSION['status']['logado'] = true;
-
-                    if( isset($_POST["remember"]) ){
-                        setcookie("remember", $result['id'], time() + 30);
-                       }
-                    header("Location: admin.php");
-                    exit();
-                  
-                } else {
-                    $_SESSION['user'] = $result["user"];
-                    $_SESSION['nome'] = $result["nome"];
-                    $_SESSION['nivel_acesso'] = $result["nivel_acesso"];
-                    $_SESSION['status']['logado'] = false;
-
-                    if( isset($_POST["remember"]) ){
-                        setcookie("remember", $result['id'], time() + 30);
-                       }
-
-                    header("Location: profile.php");
-                    exit();
-
-                }
-            }
-                
-
-
+        $login->auth($_POST['user'],$_POST['password']);
     }
-
-
-
-
-
-
 ?>
 
 

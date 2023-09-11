@@ -1,27 +1,13 @@
 
 <?php
-require_once "config.php";
+require_once __DIR__."/pages/SignUp.php";
 
+if(PHP_SESSION_ACTIVE != session_status())
+    session_start();
 
 if($_SERVER["REQUEST_METHOD"] == "POST"){
-    $nome = $_POST["nome"];
-    $user = $_POST["user"];
-    $password = $_POST["password"];
-    $confirm_password = $_POST["confirm_password"];
-
-    ;
-    if($password != $confirm_password){
-        echo '<script>alert(As senhas não coincidem)</script>';
-    } else {
-        $password = password_hash($password, PASSWORD_DEFAULT);
-        $sql = "INSERT INTO usuario (nome, user, senha) VALUES ('$nome', '$user', '$password')";
-        if($conn->query($sql) === TRUE){
-            echo '<script>alert(Usuário cadastrado com sucesso!)</script>';
-            header("Location: login.php");
-        } else {
-            echo "Erro: ".$conn->error;
-        }
-    }
+    $register = new SignUp();
+    $register->registrate($_POST["nome"],$_POST["user"], $_POST["password"],$_POST["confirm_password"]);
 }
 ?>
 
@@ -77,6 +63,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             margin-top: 20px;
         }
     </style>
+
+
+
 </head>
 <body>
     <div class="container">
