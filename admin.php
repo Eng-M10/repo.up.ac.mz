@@ -80,9 +80,9 @@ if(!isset($_SESSION['admin'])   ||  $_SESSION['status']['logado'] != true) {
                         echo "<td>" . $row['nome'] . "</td>";
                         echo "<td>" . $row['nivel_acesso'] . "</td>";
                         echo "<td>";
-                        echo '<a href="editar.php?id=' . $row['id'] . '">Editar</a>';
+                        echo '<a href="edit.php?id=' . $row['id'] . '">Editar</a>';
                         echo ' | ';
-                        echo '<a href="excluir.php?id=' . $row['id'] . '">Excluir</a>';
+                        echo '<a href="delete.php?id=' . $row['id'] . '">Excluir</a>';
                         echo "</td>";
                         echo "</tr>";
                     }
