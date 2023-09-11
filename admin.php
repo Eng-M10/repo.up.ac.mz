@@ -1,9 +1,9 @@
 
 <?php
 
-//if (PHP_SESSION_ACTIVE != session_status()) 
+if (PHP_SESSION_ACTIVE != session_status()) 
     session_start();
-//
+
 $nome = $_SESSION['nome'];
 if(!isset($_SESSION['admin'])   ||  $_SESSION['status']['logado'] != true) {
  
@@ -19,6 +19,7 @@ if(!isset($_SESSION['admin'])   ||  $_SESSION['status']['logado'] != true) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gerenciar Usuários</title>
+    <link rel="stylesheet" href="./boostrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 </head>
 <body>
@@ -53,37 +54,46 @@ if(!isset($_SESSION['admin'])   ||  $_SESSION['status']['logado'] != true) {
         <hr>
 
         <div class="dataview">
-            <table class="table table-striped">
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Usuário</th>
-                        <th>Nome</th>
-                        <th>Email</th>
-                        <th>Nível de Acesso</th>
-                        <th>Ações</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php   
-                        require_once "config.php";
-                        $sql = "SELECT id,nome,user,nivel_acesso FROM usuario";
-                        
-                        $result = $conn->query($sql)->fetch_array();
-                        echo '<pre>';
-                        print_r ($result);
-                        exit;
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Usuário</th>
+                    <th>Nome</th>
+                    <th>Nível de Acesso</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php   
+                    require_once "./pages/Connection.php";
+                    $con = new Connection("localhost", "Muvi.dev", "SbA25EFPvGNQy]Wg", "repofet");
+                    $conn = $con->connect();
+                    $sql = "SELECT id, nome, user, nivel_acesso FROM usuario";
+                    
+                    $result = $conn->query($sql);
 
-                       // while($dados=mysqli_fetch_array($result) ){
-                               // echo "<tr>";
-                              //  echo "<td>" . $row['id'] . "</td>";
-                       // }
+                    while ($row = $result->fetch_assoc()) {
+                        echo "<tr>";
+                        echo "<td>" . $row['id'] . "</td>";
+                        echo "<td>" . $row['user'] . "</td>";
+                        echo "<td>" . $row['nome'] . "</td>";
+                        //echo "<td>" . $row['email'] . "</td>";
+                        echo "<td>" . $row['nivel_acesso'] . "</td>";
+                        echo "<td>";
+                        echo '<a href="editar.php?id=' . $row['id'] . '">Editar</a>';
+                        echo ' | ';
+                        echo '<a href="excluir.php?id=' . $row['id'] . '">Excluir</a>';
+                        echo "</td>";
+                        echo "</tr>";
+                    }
 
-                        
+                    $conn->close();
+                ?>
+            </tbody>
+        </table>
 
-                    ?>
-                </tbody>
-            </table>
+
 
         </div>
     </div>

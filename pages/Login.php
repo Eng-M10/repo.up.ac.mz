@@ -30,14 +30,16 @@ class Login{
             $_SESSION['nome'] = $result["nome"];
             $_SESSION['admin'] = $result["nivel_acesso"];
             $_SESSION['status']['logado'] = true;
-            header("Location: ../admin.php");
+            header("Location: ./admin.php");
+            exit();
              }
         else{
-        $_SESSION['user'] = $result["user"];
-        $_SESSION['nome'] = $result["nome"];
-        $_SESSION['nivel_acesso'] = $result["nivel_acesso"];
-        $_SESSION['status']['logado'] = false;
-        header("Location: ../profile.php");
+            $_SESSION['user'] = $result["user"];
+            $_SESSION['nome'] = $result["nome"];
+            $_SESSION['nivel_acesso'] = $result["nivel_acesso"];
+            $_SESSION['status']['logado'] = false;
+            header("Location: ./profile.php");
+            exit();
              }
 
     }
@@ -63,7 +65,7 @@ class Login{
                 if( isset($_POST["remember"]) ){
                     setcookie("remember", $result['id'], time() + 30);
                    }
-                header("Location: ../admin.php");
+                header("Location: ./admin.php");
                 exit();
               
             } else {
@@ -76,7 +78,7 @@ class Login{
                     setcookie("remember", $result['id'], time() + 30);
                    }
 
-                header("Location: ../profile.php");
+                header("Location: ./profile.php");
                 exit();
 
             }

@@ -1,5 +1,4 @@
 <?php
-   require_once "config.php";
    require_once "./pages/Login.php";
 
     $login = new Login();
@@ -21,7 +20,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Entrar</title>
     <link rel="shortcut icon" href="../img/up_logo.png" type="image/x-icon">
-    
+    <link rel="stylesheet" href="./boostrap/css/bootstrap.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
    
     <style>

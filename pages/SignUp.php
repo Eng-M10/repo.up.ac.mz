@@ -22,9 +22,9 @@ class SignUp{
             if($this->con->query($sql) === TRUE){
 
                 echo '<script>alert(Usuário cadastrado com sucesso!)</script>';
-                
-                header("Location: ../login.php");
-
+                $this->con->close();
+                header("Location: ./login.php");
+                exit();
             } else {
                 echo "Erro: ".$this->con->error;
             }
@@ -32,4 +32,9 @@ class SignUp{
     }
 
 
+
+    public function edite(){
+
+        
+    }
 }
