@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,6 +20,22 @@
             <a href="login.php" class="text-white me-2">Login</a>
             <a href="signup.php" class="text-white">Cadastrar</a>
         </div>
+    </div>
+
+
+
+    <div class="lastUploaded" class="bg-light.gb-gradient text-dark p-4 d-flex justiify-content-between align-items-start">
+        <div>
+            <table>
+                <thead>
+                    <th>Title</th>
+                    <th>Uploaded at</th>
+                    <th>Authors</th>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+
     </div>
 
 

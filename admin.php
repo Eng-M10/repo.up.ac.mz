@@ -46,7 +46,7 @@ if(!isset($_SESSION['admin'])   ||  $_SESSION['status']['logado'] != true) {
                     </div>
                     <button type="submit" class="btn btn-primary">Cadastrar Usuário</button>
                 </form>
-                <p><?php //echo $message; ?></p>
+                
                 <a href="index.php">Voltar ao Dashboard</a>
             </div>
         </div>
@@ -78,7 +78,6 @@ if(!isset($_SESSION['admin'])   ||  $_SESSION['status']['logado'] != true) {
                         echo "<td>" . $row['id'] . "</td>";
                         echo "<td>" . $row['user'] . "</td>";
                         echo "<td>" . $row['nome'] . "</td>";
-                        //echo "<td>" . $row['email'] . "</td>";
                         echo "<td>" . $row['nivel_acesso'] . "</td>";
                         echo "<td>";
                         echo '<a href="editar.php?id=' . $row['id'] . '">Editar</a>';
