@@ -1,4 +1,5 @@
 ​<?php
+require_once "./pages/Delete.php";
 if (PHP_SESSION_ACTIVE != session_status()) 
 session_start();
 
@@ -8,10 +9,10 @@ if(!isset($_SESSION['admin'])   ||  $_SESSION['status']['logado'] != true) {
 header("Location: login.php");
 exit;
 }
-    require_once "./pages/Delete.php";
+
+if (isset($_GET['id'])) {
     $del = new Delete();
-    if (isset($_GET['id'])) {
-        $this->del->delete();
+    $del->delete();
     }   
 ?>
 
