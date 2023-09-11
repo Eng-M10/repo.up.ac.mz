@@ -18,6 +18,6 @@ $username = $_SESSION['nome'];
 <body>
     <h1>Perfil de <?php echo $username; ?></h1>
     <!-- Mostrar informações do perfil do usuário -->
-    <a href="index.php">Voltar ao Dashboard</a>
+    <a href="logout.php">Sair</a>
 </body>
 </html>

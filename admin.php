@@ -47,7 +47,7 @@ if(!isset($_SESSION['admin'])   ||  $_SESSION['status']['logado'] != true) {
                     <button type="submit" class="btn btn-primary">Cadastrar Usuário</button>
                 </form>
                 
-                <a href="index.php">Voltar ao Dashboard</a>
+                <a href="logout.php">Sair</a>
             </div>
         </div>
 
