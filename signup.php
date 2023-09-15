@@ -29,7 +29,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             justify-content: center;
             flex-direction: column;
             justify-content: space-between;
-        
             min-height: 100vh;
             background-color: #000;
             color: #fff;
@@ -52,7 +51,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         .form-control {
             background-color: #fff;
             border-color: #fff;
-            color: #fff;
+           
         }
 
         .btn-primary:hover {

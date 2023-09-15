@@ -39,6 +39,137 @@
     </div>
 
 
+    <div class="container mt-5">
+        <h1>Bem-vindo ao Repositório Científico</h1>
+        <p>Encontre e explore uma vasta coleção de artigos científicos.</p>
+
+        <!-- Campo de pesquisa -->
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Pesquisar artigos científicos">
+            <div class="input-group-append">
+                <button class="btn btn-primary" type="button">Pesquisar</button>
+            </div>
+        </div>
+
+        <!-- Cards de informações -->
+        <div class="row">
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card">
+                    <img src="imagem1.jpg" class="card-img-top" alt="Imagem do Artigo">
+                    <div class="card-body">
+                        <h5 class="card-title">Título do Artigo 1</h5>
+                        <p class="card-text">Autor: Autor 1</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card">
+                    <img src="imagem2.jpg" class="card-img-top" alt="Imagem do Artigo">
+                    <div class="card-body">
+                        <h5 class="card-title">Título do Artigo 2</h5>
+                        <p class="card-text">Autor: Autor 2</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card">
+                    <img src="imagem2.jpg" class="card-img-top" alt="Imagem do Artigo">
+                    <div class="card-body">
+                        <h5 class="card-title">Título do Artigo 3</h5>
+                        <p class="card-text">Autor: Autor 3</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card">
+                    <img src="imagem2.jpg" class="card-img-top" alt="Imagem do Artigo">
+                    <div class="card-body">
+                        <h5 class="card-title">Título do Artigo 4</h5>
+                        <p class="card-text">Autor: Autor 4</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card">
+                    <img src="imagem2.jpg" class="card-img-top" alt="Imagem do Artigo">
+                    <div class="card-body">
+                        <h5 class="card-title">Título do Artigo 5</h5>
+                        <p class="card-text">Autor: Autor 5</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card">
+                    <img src="imagem2.jpg" class="card-img-top" alt="Imagem do Artigo">
+                    <div class="card-body">
+                        <h5 class="card-title">Título do Artigo 6</h5>
+                        <p class="card-text">Autor: Autor 6</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Adicione mais cards conforme necessário -->
+        </div>
+        <hr>
+
+        
+
+        <!--
+         Preview de documentos carregados recentemente em forma de tabela -->
+        <h2>Documentos Carregados Recentemente</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Título</th>
+                    <th>Autor</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Documento 1</td>
+                    <td>Autor 1</td>
+                </tr>
+                <tr>
+                    <td>Documento 2</td>
+                    <td>Autor 2</td>
+                </tr>
+                <!-- Adicione mais linhas conforme necessário -->
+            </tbody>
+        </table>
+    </div>
+
+
+     <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h4>Links Úteis</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Termos de Uso</a></li>
+                        <li><a href="#">Política de Privacidade</a></li>
+                        <li><a href="#">Sobre Nós</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <h4>Contato</h4>
+                    <address>
+                        <p><strong>Email:</strong> info@repositoriocientifico.com</p>
+                        <p><strong>Telefone:</strong> (123) 456-7890</p>
+                    </address>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>

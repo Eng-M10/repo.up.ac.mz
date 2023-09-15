@@ -14,6 +14,7 @@ $username = $_SESSION['nome'];
 <html>
 <head>
     <title>Perfil</title>
+    <link rel="stylesheet" href="./boostrap/css/bootstrap.min.css">
 </head>
 <body>
     <h1>Perfil de <?php echo $username; ?></h1>
