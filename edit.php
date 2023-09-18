@@ -72,6 +72,10 @@ if (isset($_GET['id'])) {
 </body>
     </html>
     <?php
+    
+
+
+
     } else{
         header('Location: admin.php');
     }

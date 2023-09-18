@@ -7,41 +7,48 @@
     <link rel="stylesheet" href="./boostrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 </head>
-<body class="bg-dark">
-    <div class="bg-dark.bg-gradient text-white p-4 d-flex justify-content-between align-items-center">
+
+<style>
+    footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 100px;
+}
+
+
+
+</style>
+
+
+<body class="dark-mode">
+    <!-- Barra de navegação -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-light d-flex ">
         <div class="d-flex align-items-center">
-            <img src="./img/up_logo.png" alt="logo da up-maputo" class="w-10 h-10 me-2">
+            <img src="./img/up_logo.png" alt="logo da up-maputo" width="100em" height="100em" class="w-10 h-10 me-1.2">
             <span class="border border-white mx-10"></span>
-            <img src="./img/logo-fet.jpeg" alt="logotipo da fet" class="w-20 h-20 ms-2">
-            <h1 class="h5 ms-2">Repositorio da Faculdade de Engenharias e Tecnologias</h1>
+            <img src="./img/logo-fet.jpeg" alt="logotipo da fet" class="w-10 h-10 ms-1">
+            <h1 class="h5 ms-2 text-dark">Repositorio da Faculdade de Engenharias e Tecnologias</h1>
         </div>
-        <div class="d-flex align-items-center">
-            <input type="text" name="search" id="search" placeholder="Pesquisar" class="form-control me-2">
-            <a href="login.php" class="text-white me-2">Login</a>
-            <a href="signup.php" class="text-white">Cadastrar</a>
-        </div>
-    </div>
+        <div class="collapse navbar-collapse" id="navbarNav">
+		    <ul class="navbar-nav ml-auto" left="150em">
+                <li class="nav-item">
+                    <a href="login.php" class="text-dark me-2 btn btn-primary">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a href="signup.php" class="text-dark btn btn-primary">Cadastrar</a>
+                </li>
 
-
-
-    <div class="lastUploaded" class="bg-light.gb-gradient text-dark p-4 d-flex justiify-content-between align-items-start">
-        <div>
-            <table>
-                <thead>
-                    <th>Title</th>
-                    <th>Uploaded at</th>
-                    <th>Authors</th>
-                </thead>
-                <tbody></tbody>
-            </table>
+		    </ul>
         </div>
 
-    </div>
+    </nav>
 
-
+    <!-- Conteúdo principal -->
     <div class="container mt-5">
-        <h1>Bem-vindo ao Repositório Científico</h1>
-        <p>Encontre e explore uma vasta coleção de artigos científicos.</p>
+        <h1>Bem-vindo ao Repositório Científico da F.E.T</h1>
+        <p>Encontre e explore uma vasta coleção de artigos científicos da Faculdade de Engenharias e Tecnologias.</p>
 
         <!-- Campo de pesquisa -->
         <div class="input-group mb-3">
@@ -123,7 +130,7 @@
 
         <!--
          Preview de documentos carregados recentemente em forma de tabela -->
-        <h2>Documentos Carregados Recentemente</h2>
+        <h2>Documentos Recentes</h2>
         <table class="table">
             <thead>
                 <tr>

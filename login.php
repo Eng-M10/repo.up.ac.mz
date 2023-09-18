@@ -53,7 +53,7 @@
         .form-control {
             
             border-color: #fff;
-            color: #0000;
+            
         }
 
         .btn-primary:hover {
